@@ -9,9 +9,54 @@
     <link rel="stylesheet" href="/dist/css/styles.css">
 </head>
 <body>
-    <main>
+<main>
+<header>
+    <div
+    class="p-5 text-center bg-image"
+    style="
+      background-color: #7F8076;
+      height: 400px;"> 
+    
+    <div class="mask">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-white">
+          <h1 class="mb-3">Welcome to (name) Action Site</h1>
+          <h4 class="mb-3">Search through thousands of listings...</h4>
+          <div class="col-md-4">
+            <form class="d-flex">
+                <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-success" type="submit">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  <nav class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+    <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+      <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+    </a>
 
-    </main>
-    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <ul class="nav col-12 col-md-auto mb-2 tent-justify-concenter mb-md-0">
+      <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
+      <li><a href="#" class="nav-link px-2 link-dark">Listings</a></li>
+      <li><a href="#" class="nav-link px-2 link-dark">Pricing</a></li>
+      <li><a href="#" class="nav-link px-2 link-dark">FAQs</a></li>
+      <li><a href="#" class="nav-link px-2 link-dark">About</a></li>
+    </ul>
+
+    <div class="col-md-3 text-end">
+      <button type="button" class="btn btn-outline-primary me-2">Login</button>
+      <button type="button" class="btn btn-primary">Sign-up</button>
+    </div>
+</nav>
+</header>
+
+</main>
+<script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
