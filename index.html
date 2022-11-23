@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/dist/css/styles.css">
 </head>
 <body>
-<main>
+
 <header>
     <div
     class="p-5 text-center bg-image"
@@ -22,14 +22,20 @@
         <div class="text-white">
           <h1 class="mb-3">Welcome to (name) Action Site</h1>
           <h4 class="mb-3">Search through thousands of listings...</h4>
-          <div class="col-md-4">
-            <form class="d-flex">
-                <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-success" type="submit">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </button>
-            </form>
+          <div class="row height d-flex justify-content-center align-items-center">
+
+            <div class="col-md-8">
+
+              <div class="search">
+                <i class="fa fa-search"></i>
+                <input type="text" class="form-control" placeholder="What are you looking for?">
+                <button class="btn btn-primary">Search</button>
+              </div>
+              
+            </div>
+            
           </div>
+      </div>
           
         </div>
       </div>
@@ -42,19 +48,24 @@
     </a>
 
     <ul class="nav col-12 col-md-auto mb-2 tent-justify-concenter mb-md-0">
-      <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
-      <li><a href="#" class="nav-link px-2 link-dark">Listings</a></li>
-      <li><a href="#" class="nav-link px-2 link-dark">Pricing</a></li>
+      <li><a href="index.html" class="nav-link px-2 link-secondary">Home</a></li>
+      <li><a href="listings.html" class="nav-link px-2 link-dark">Listings</a></li>
+      <li><a href="profile.html" class="nav-link px-2 link-dark">Profile</a></li>
       <li><a href="#" class="nav-link px-2 link-dark">FAQs</a></li>
       <li><a href="#" class="nav-link px-2 link-dark">About</a></li>
     </ul>
 
     <div class="col-md-3 text-end">
-      <button type="button" class="btn btn-outline-primary me-2">Login</button>
-      <button type="button" class="btn btn-primary">Sign-up</button>
+      <a href="signin.html"><button type="button" class="btn btn-outline-primary me-2">Login</button></a>
+      <a href="register.html"><button type="button" class="btn btn-primary">Sign-up</button></a>
     </div>
 </nav>
 </header>
+<main>
+<section>
+  <h1>Most Recent Listings</h1>
+</section>
+
 
 </main>
 <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
