@@ -5,9 +5,9 @@ import {
 } from "./error.mjs";
 
 
-const email = document.querySelector("#emailAddress")
+const email = document.querySelector(".email-container")
 const email_error = document.querySelector(".email-error-container");
-const password = document.querySelector("#password");
+const password = document.querySelector(".password-container");
 const password_error = document.querySelector(".password-error-container");
 
 export function validateSignin (event) {

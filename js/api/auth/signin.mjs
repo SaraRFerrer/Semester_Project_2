@@ -3,10 +3,10 @@ import * as stored from "../constants/stored.mjs";
 import { API_URL_SOCIAL } from "../constants/url.mjs";
 
 
-const email = document.querySelector("#emailAddress");
-const password = document.querySelector("#password");
+const email = document.querySelector(".email-container");
+const password = document.querySelector(".password-container");
 
-const loginForm = document.querySelector(".login-form");
+const signinForm= document.querySelector(".signin-form");
 
     // calling API to get token authorisation and saving them in local storage
 
@@ -53,4 +53,4 @@ const loginForm = document.querySelector(".login-form");
     } 
     
 
-    loginForm.addEventListener ("submit", validateSignin);
+    signinForm.addEventListener ("submit", validateSignin);

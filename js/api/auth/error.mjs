@@ -1,6 +1,6 @@
 // checking username
 
-export function validateUsername(username) {
+ export function validateUsername(username) {
     const pattern = /^[\w]+$/;
     const patternMatches = pattern.test(username.trim());
     return patternMatches
