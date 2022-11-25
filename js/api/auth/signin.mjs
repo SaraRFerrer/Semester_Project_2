@@ -1,6 +1,6 @@
 import { validateSignin } from "./signinValidation.mjs";
 import * as stored from "../constants/stored.mjs";
-import { API_URL_SOCIAL } from "../constants/url.mjs";
+import { API_PATH_URL } from "../constants/url.mjs";
 
 
 const email = document.querySelector(".email-container");
@@ -26,7 +26,7 @@ const signinForm= document.querySelector(".signin-form");
           };
 
           try {
-            const response = await fetch(`${API_URL_SOCIAL}/auth/login`, postData);
+            const response = await fetch(`${API_PATH_URL}/auth/login`, postData);
             const json = await response.json();
             stored.saved("accessToken", json.accessToken);
             stored.saved("profile", json);

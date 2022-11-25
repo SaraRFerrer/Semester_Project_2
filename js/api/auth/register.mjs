@@ -1,4 +1,4 @@
-import { API_URL_SOCIAL } from "../constants/url.mjs";
+import { API_PATH_URL } from "../constants/url.mjs";
 import { registrationSuccess } from "./regValidation.mjs";
 
 const form = document.querySelector("form")
@@ -25,7 +25,7 @@ export async function register (url, data) {
 
     try {
         
-        const response = await fetch (`${API_URL_SOCIAL}/auth/register`, postData);
+        const response = await fetch (`${API_PATH_URL}/auth/register`, postData);
         console.log(response);
         const json = await response.json();
         console.log(json);
