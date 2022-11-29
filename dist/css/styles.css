@@ -11497,4 +11497,21 @@ h1, .h1 {
   background: #94a68a;
 }
 
+.error {
+  display: none;
+}
+
+.create-btn {
+  margin-top: 20px;
+}
+
+.form-control,
+.form-select {
+  border: solid #555;
+}
+
+.form-select {
+  margin-top: 10px;
+}
+
 /*# sourceMappingURL=styles.css.map */

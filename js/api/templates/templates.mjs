@@ -39,11 +39,6 @@ export async function listingTemplate(postData){
                   </div>
                 </div>
         </div`
-
-
-    
-
-
     
     }
 }

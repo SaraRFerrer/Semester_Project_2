@@ -21,17 +21,16 @@ export async function getPosts(postData) {
           const listings = json[i];
   
           listingsContainer.innerHTML +=  `
-          <div style="background-color: #eee;">
+          <section style="background-color: #eee;">
               <div class="container py-5">
                 <div class="row">
                   <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
                     <div class="card">
                       <div class="d-flex justify-content-between p-3">
                         <p class="lead mb-0">${listings.created}</p>
-                      
                       </div>
                       <img src="${listings.media}"
-                        class="card-img-top" alt="Laptop" />
+                        class="card-img-top" />
                       <div class="card-body">
                         <div class="d-flex justify-content-between">
                           <p class="small">${listings.title}</p>
@@ -43,7 +42,7 @@ export async function getPosts(postData) {
                       </div>
                     </div>
                   </div>
-          </div`
+          </section`
       
       }
   } catch (error){
