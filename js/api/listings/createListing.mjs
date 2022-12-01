@@ -7,13 +7,13 @@ const method = "post";
 
 
 
-export async function createListing(title, description, media, tags, endsAt) {
+export async function createListing(postData) {
     const createUrl = API_PATH_URL + action;
     
 
     const response = await fetchToken (createUrl, {
         method,
-        body: JSON.stringify(title, description, media, tags, endsAt)
+        body: JSON.stringify(postData)
     })
 
     const newListing = await response.json()
