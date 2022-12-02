@@ -1,21 +1,11 @@
+import { load } from "../constants/stored.mjs";
 
 
-export class getProfile {
-    constructor(name, avatar, credits, email) {
-        this.Name = name;
-        this.Avatar = avatar;
-        this.Credits = credits;
 
-    }
+const accessToken = load("accessToken");
+const profile = JSON.parse(localStorage.getItem("profile"));
+const { name: username, avatar: mediaUrl, credits: credits} = profile;
 
-    userProfile(){}
-}
-
-const accessToken = localStorage.getItem("accessToken");
-
-if (accessToken) {
-    const profile = JSON.parse(localStorage.getItem("profile"));
-    const { Name: username, Avatar: mediaUrl, Credits: credits} = profile;
 
     const content = document.querySelector(".page-heading");
     if (content) {
@@ -30,11 +20,12 @@ if (accessToken) {
             <h2 class="media-heading">${username}
               <small> - Profile</small>
             </h2>
-            <h5>${credits}</h5>
+            <h5>Your Credits: ${credits}</h5>
                     <button type="button" class="btn btn-outline-primary me-2">Buy Credits</button>
                     <button type="button" class="btn btn-outline-primary me-2">Edit Avatar</button>
           </div>
         </div>
     </div>`;
     }
-}
+
+
