@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/SaraRFerrer/Semester_Project_2#readme",
   "dependencies": {
-    "bootstrap": "^5.2.2"
+    "bootstrap": "^5.2.3"
   },
   "devDependencies": {
     "live-server": "^1.2.2",
