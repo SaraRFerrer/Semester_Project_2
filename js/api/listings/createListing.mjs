@@ -1,6 +1,14 @@
 import { API_PATH_URL } from "../constants/url.mjs";
 import { fetchToken } from "../constants/fetch.mjs";
 
+/**
+ * Sends a POST request to the API to create a new listing
+ *  @param {string} title user has chosen for their item
+ * @param {string} description user has chosen for their item
+ * @param {array} tags array of strings
+ * @param {array} media array of media urls
+ * @param {date} date end date
+ */
 
 const action ="/listings";
 const method = "post";
