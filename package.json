@@ -1,0 +1,36 @@
+{
+  "name": "semester-project",
+  "version": "0.0.1",
+  "description": "semester project for noroff semester 3. an auction site with noroff api",
+  "main": "index.js",
+  "scripts": {
+    "build": "sass src/scss:dist",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "sass --watch src/scss:dist/css & live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SaraRFerrer/Semester_Project_2.git"
+  },
+  "keywords": [
+    "css",
+    "framework",
+    "js",
+    "html",
+    "sass",
+    "api"
+  ],
+  "author": "Sara Ferrer <sararferreræhotmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SaraRFerrer/Semester_Project_2/issues"
+  },
+  "homepage": "https://github.com/SaraRFerrer/Semester_Project_2#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.2"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "sass": "^1.56.1"
+  }
+}
