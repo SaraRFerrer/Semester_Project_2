@@ -11,18 +11,18 @@ import { fetchToken } from "../constants/fetch.mjs";
  */
 
 const action ="/listings";
-const method = "post";
+const method = "POST";
 
 
 
-export async function createListing({ title, description, media: [media], tags: [tags], endsAt }) {
+export async function createListing(title, description, media, tags, endsAt) {
     const createUrl = API_PATH_URL + action;
     
 
     const response = await fetchToken (createUrl, {
         method,
-        body: JSON.stringify({ title, description, media: [media], tags: [tags], endsAt })
-    })
+        body: JSON.stringify({ title, description, media, tags, endsAt })
+    });
 
     const newListing = await response.json()
     console.log(newListing)
