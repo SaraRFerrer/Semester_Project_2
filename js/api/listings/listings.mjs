@@ -29,7 +29,7 @@ export async function getPosts() {
 
        
         const filteredFeed = json.filter(function (listing) {
-            if (listing.title.toLowerCase().includes(filterValue) || listing.description.toLowerCase().includes(filterValue)) {
+            if (listing.title.toLowerCase().includes(filterValue) || listing.description?.toLowerCase().includes(filterValue)) {
                 return true;
             }
         });
@@ -39,9 +39,7 @@ export async function getPosts() {
         console.log(filteredFeed);
         for(let i = 0; i < json.length; i++) {
           wrapper.innerHTML +=  `
-          <section style="background-color: #eee;">
-              <div class="container py-5">
-                <div class="row">
+         
                   <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
                     <div class="card">
                       <div class="d-flex justify-content-between p-3">
@@ -53,14 +51,11 @@ export async function getPosts() {
                         <div class="d-flex justify-content-between">
                           <p class="small">${filteredFeed[i].title}</p>
                         </div>
-            
                         <div class="d-flex justify-content-between mb-3">
                           <h5 class="mb-0">${filteredFeed[i].description}</h5
                         </div>
-                      </div>
-                    </div>
-                  </div>
-          </section`
+                      </div>`
+                    
         }
       };
     }
@@ -72,12 +67,10 @@ export async function getPosts() {
       const listingsContainer = document.querySelector(".listings-container");
 
       listingsContainer.innerHTML = "";
+
       for(let i = 0; i < json.length; i++) {
           listingsContainer.innerHTML +=  `
-          <section style="background-color: #eee;">
-              <div class="container py-5">
-                <div class="row">
-                  <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
+                  <div class="col-md-12 col-lg-4 ">
                     <div class="card">
                       <div class="d-flex justify-content-between p-3">
                         <p class="lead mb-0">${json[i].created}</p>
@@ -92,10 +85,8 @@ export async function getPosts() {
                         <div class="d-flex justify-content-between mb-3">
                           <h5 class="mb-0">${json[i].description}</h5
                         </div>
-                      </div>
-                    </div>
-                  </div>
-          </section>`
+                      </div>`
+                    
       
       }
   } catch (error){
