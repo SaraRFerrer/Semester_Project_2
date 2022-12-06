@@ -1,31 +1,67 @@
 import { load } from "../constants/stored.mjs";
+import { fetchToken } from "../constants/fetch.mjs";
+import { API_PATH_URL } from "../constants/url.mjs";
+
+const content = document.querySelector(".page-heading");
+
+/**
+ * Authenticating the user using fetchToken function
+ */
+
+const action = "/profiles";
+const user = "?_seller=true&_count=true";
+
+export async function getProfile (name) {
 
 
+  if(!name){
+    throw new Error("Request requires a user name");
+  }
 
-const accessToken = load("accessToken");
-const profile = JSON.parse(localStorage.getItem("profile"));
-const { name: username, avatar: mediaUrl, credits: credits} = profile;
+  const profile_URL = `${API_PATH_URL}${action}/${name}${user}`;
+
+  const response = await fetchToken (profile_URL)
+
+  return await response.json();
+}
 
 
-    const content = document.querySelector(".page-heading");
-    if (content) {
-        content.innerHTML = `<div class="page-heading">
-        <div class="media clearfix">
-          <div class="media-left pr30">
-            <a href="#">
-              <img class="media-object mw150" src="${mediaUrl}">
-            </a>
-          </div>                      
-          <div class="media-body va-m" id="profile-details" >
-            <h2 class="media-heading">${username}
-              <small> - Profile</small>
-            </h2>
-            <h5>Your Credits: ${credits}</h5>
-                    <button type="button" class="btn btn-outline-primary me-2">Buy Credits</button>
-                    <button type="button" class="btn btn-outline-primary me-2">Edit Avatar</button>
-          </div>
+async function userProfile () {
+
+  // Update saved data in localStorage when viewing own profile
+  
+
+  const userData = load("profile");
+  const { name, credits} = userData;
+  const avatar = load("avatar");
+
+  if (content) {
+    content.innerHTML = `<div class="page-heading">
+    <div class="media clearfix">
+      <div class="media-left pr30">
+        <a href="#">
+          <img class="media-object mw150" src="${avatar}">
+        </a>
+      </div>                      
+      <div class="media-body va-m" id="profile-details" >
+        <h2 class="media-heading">${name}
+          <small> - Profile</small>
+        </h2>
+        <h5>Your Credits: ${credits}</h5>
+        
         </div>
-    </div>`;
-    }
+           </div>
+             </div>
+      </div>
+    </div>
+</div>`;
+}
+
+}
+
+userProfile();
+
+
+    
 
 

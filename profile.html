@@ -62,55 +62,42 @@
     <div class="page-heading">
         <div class="media clearfix">
           <div class="media-left pr30">
-            <a href="#">
-              <img class="media-object mw150" src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="...">
-            </a>
+    
           </div>                      
           <div class="media-body va-m" id="profile-details" >
-            <h2 class="media-heading">Michael Halls
-              <small> - Profile</small>
-            </h2>
-            <h5>Total Credits</h5>
-                    <button type="button" class="btn btn-outline-primary me-2">Buy Credits</button>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reg-modal">
-                     Edit Avatar
-                    </button>
-                    
-                    <!-- Modal -->
-                    <div class="modal fade" id="reg-modal" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
-                      <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h5 class="modal-title" id="modal-title">Edit Avatar</h5>
-                            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
-                            </button>
-                          </div>
-                          <div class="modal-body">
-                            <form>
-                              <div class="text-right m-t-20">
-                                <label for="">New Avatar Url</label>
-                                <input class="form-control" type="url" name="media" placeholder="Media..." >
-                            </div>
+      </div>
+      </div>
+  </section>
+  <section id="content" class="container">
+            <button type="button" id="editAvBtn" class="btn btn-outline-primary me-2">Buy Credits</button>
+            <button class="btn btn-theme-beige" id="editAvBtn" type="button" data-bs-toggle="modal" data-bs-target="#editAvModal">Edit Avatar</button>
+            <div class="modal fade" id="editAvModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="editAvModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content bg-theme-blue">
+                  <div class="modal-header">
+                    <h5 class="modal-title text-theme-beige" id="signOutModalLabel">Edit Avatar</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form class="d-flex flex-column gap-2 p-2 bg-theme-blue" id="editAvForm">
+                    <div class="text-right m-t-20">
+                    <label for="avatar-media">New Avatar URL</label>
+                    <input id="avatar-media" class="form-control" type="url" name="avatar" placeholder="New Avatar..." >
+                    </div>
+                      <button type="submit" id="signOutBtn" class="btn btn-outline-danger">Edit Avatar</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="user-feedback">
 
-                            </form>
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-           
-                    </div>
-                       </div>
-                         </div>
-                         <div id="error-container">
-                        
-                         </div>
-           </div>
-    
-    
+            </div>
+    </section>
+      
+   
+      
+  <section id="content" class="container">
     <div class="row">
         <div class="col-md-4">
           <div class="panel">
@@ -255,17 +242,7 @@
                       <input class="form-control" type="tags" name="tags" placeholder="Tags..." >
                   </div>
                     <button class="create-btn btn btn-primary waves-effect waves-light">Create Listing</button>
-                </form>
-                 
-                    
-                  
-                      
-                        
-                     
-                        
-                     
-                  
-                      
+                </form>    
                 </div>
                 <div id="tab2" class="tab-pane"></div>
                 <div id="tab3" class="tab-pane"></div>
@@ -275,7 +252,9 @@
           </div>
         </div>
     </section>
-    </section>
+  
+   
+    
 
 
 </main>
@@ -283,5 +262,6 @@
 <script type="module" src="/js/api/handelers/create.mjs"></script>
 <script type="module" src="/js/api/auth/logout.mjs"></script>
 <script type="module" src="/js/api/profile/profile.mjs"></script>
+<script type="module" src="/js/api/handelers/update.mjs"></script>
 </body>
 </html>

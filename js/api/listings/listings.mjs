@@ -12,7 +12,7 @@ export async function getPosts() {
   
     const response = await fetch(renderUrl);
     const json = await response.json();
-    console.log(json);
+    //console.log(json);
 
  /**
      * User can search the array filtering the posts.
@@ -25,10 +25,11 @@ export async function getPosts() {
     searchInput.onkeyup = function (event) {
         
         const filterValue = event.target.value.trim().toLowerCase();
+        console.log("event", event)
 
        
         const filteredFeed = json.filter(function (listing) {
-            if (listing.title.toLowerCase().includes(filterValue) || listing.body.toLowerCase().includes(filterValue)) {
+            if (listing.title.toLowerCase().includes(filterValue) || listing.description.toLowerCase().includes(filterValue)) {
                 return true;
             }
         });
@@ -94,7 +95,7 @@ export async function getPosts() {
                       </div>
                     </div>
                   </div>
-          </section`
+          </section>`
       
       }
   } catch (error){
