@@ -7,6 +7,7 @@ function logout() {
         remove("accessToken");
         remove("credits");
         remove("profile");
+        remove("avatar");
         window.location.assign("index.html");
     });
 }

@@ -3,6 +3,7 @@ import { fetchToken } from "../constants/fetch.mjs";
 import { API_PATH_URL } from "../constants/url.mjs";
 
 const content = document.querySelector(".page-heading");
+const profilebtn = document.querySelector(".profilebtn");
 
 /**
  * Authenticating the user using fetchToken function
@@ -12,6 +13,12 @@ const action = "/profiles";
 const user = "?_seller=true&_count=true";
 
 export async function getProfile (name) {
+
+
+  if (!localStorage.getItem("accessToken")) {
+    window.location.href = "signin.html";
+    throw new Error ("Please Log In!")
+  }
 
 
   if(!name){
@@ -34,6 +41,8 @@ async function userProfile () {
   const userData = load("profile");
   const { name, credits} = userData;
   const avatar = load("avatar");
+
+
 
   if (content) {
     content.innerHTML = `<div class="page-heading">

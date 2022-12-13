@@ -20,7 +20,7 @@
     <div class="mask">
       <div class="d-flex justify-content-center align-items-center h-100">
         <div class="text-white">
-          <h1 class="mb-3">Welcome to (name) Action Site</h1>
+          <h1 class="mb-3">Welcome to The Markets Market</h1>
           <h4 class="mb-3">Search through thousands of listings...</h4>
           <div class="row height d-flex justify-content-center align-items-center">
 
@@ -29,7 +29,7 @@
               <div class="search">
                 <i class="fa fa-search"></i>
                 <input type="text" class="form-control" placeholder="What are you looking for?">
-                <button class="btn btn-primary">Search</button>
+                <a href="listings.html"><button class="btn btn-primary">Search</button></a>
               </div>
               
             </div>
@@ -51,19 +51,21 @@
       <li><a href="index.html" class="nav-link px-2 link-secondary">Home</a></li>
       <li><a href="listings.html" class="nav-link px-2 link-dark">Listings</a></li>
       <li><a href="profile.html" class="nav-link px-2 link-dark">Profile</a></li>
-      <li><a href="#" class="nav-link px-2 link-dark">FAQs</a></li>
-      <li><a href="#" class="nav-link px-2 link-dark">About</a></li>
+      <li><a href="signin.html"><button type="button" class="btn btn-outline-primary me-2">Login</button></a></li>
+      <li><a href="register.html"><button type="button" class="btn btn-primary">Sign-up</button></a></li>
     </ul>
-
-    <div class="col-md-3 text-end">
-      <a href="signin.html"><button type="button" class="btn btn-outline-primary me-2">Login</button></a>
-      <a href="register.html"><button type="button" class="btn btn-primary">Sign-up</button></a>
-    </div>
 </nav>
 </header>
 <main>
 <section>
   <h1>Most Recent Listings</h1>
+</section>
+<section id="grid-container" class="flex" style="background-color: #eee;">
+  <div class="container py-5" style=" margin-top: 10rem;">
+    <div class="row index-container">
+    </div>
+  </div>
+  <a href="listings.html"><button type="button" class="btn btn-primary align-items-center justify-content-center">View all Listings</button></a>
 </section>
 
 
@@ -71,5 +73,18 @@
 
 </main>
 <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script type="module" src="/js/api/handelers/index.mjs"></script>
 </body>
+<footer>
+  <ul>
+      <li><a class="footer-text" href="index.html">Home</a></li>
+      <li><a href="signin.html"><button type="button" class="btn btn-outline-primary me-2">Login</button></a></li>
+      <li><a href="register.html"><button type="button" class="btn btn-primary">Sign-up</button></a></li>
+      <li><a href="listings.html"></a></li>
+      </ul>
+      <div class="copy">
+          Ⓒ Copyright | All right belong to The Markets Market
+      </div>
+
+</footer>
 </html>

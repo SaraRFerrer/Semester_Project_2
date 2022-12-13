@@ -29,7 +29,7 @@ export async function register (url, data) {
         console.log(response);
         const json = await response.json();
         console.log(json);
-        //window.location.assign("signin.html");
+        window.location.assign("signin.html");
         return json;
       } catch (error) {
         console.log(error);

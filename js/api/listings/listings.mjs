@@ -4,7 +4,7 @@ import { API_PATH_URL } from "../constants/url.mjs";
 const wrapper = document.querySelector("#wrapper");
 
 
-const listings = "/listings";
+const listings = "/listings?_active=true&sort=created&sortOrder=desc&_seller=true";
 
 export async function getPosts() {
     const renderUrl =
@@ -12,7 +12,9 @@ export async function getPosts() {
   
     const response = await fetch(renderUrl);
     const json = await response.json();
-    //console.log(json);
+    console.log(json);
+
+    
 
  /**
      * User can search the array filtering the posts.
@@ -34,11 +36,11 @@ export async function getPosts() {
             }
         });
 
-        wrapper.innerHTML = "";
+        wrapper.innerHTML = " ";
 
         console.log(filteredFeed);
         for(let i = 0; i < json.length; i++) {
-          wrapper.innerHTML +=  `
+          wrapper.innerHTML +=  `<a href="specific.html?id=${filteredFeed[i].id}"
          
                   <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
                     <div class="card">
@@ -54,7 +56,9 @@ export async function getPosts() {
                         <div class="d-flex justify-content-between mb-3">
                           <h5 class="mb-0">${filteredFeed[i].description}</h5
                         </div>
-                      </div>`
+                      </div>
+                      </div>
+                  </div>`
                     
         }
       };
@@ -64,19 +68,29 @@ export async function getPosts() {
 
 
     try {
-      const listingsContainer = document.querySelector(".listings-container");
+      const listingsContainer = document.querySelector(".content-container");
 
-      listingsContainer.innerHTML = "";
+      listingsContainer.innerHTML = " ";
 
       for(let i = 0; i < json.length; i++) {
-          listingsContainer.innerHTML +=  `
-                  <div class="col-md-12 col-lg-4 ">
+        const date = new Date (json[i].endsAt);
+        const created = date.toDateString(); 
+        if (json[i].media.length === 0) {
+          json[i].media = 'https://png.pngitem.com/pimgs/s/287-2876527_uncle-mike-s-qd115-ns-circle-hd-png.png';
+        } else if (json[i].media.status == 403) {
+          json[i].media = 'https://png.pngitem.com/pimgs/s/287-2876527_uncle-mike-s-qd115-ns-circle-hd-png.png';
+        }
+          listingsContainer.innerHTML += 
+           `
+                  <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
                     <div class="card">
                       <div class="d-flex justify-content-between p-3">
-                        <p class="lead mb-0">${json[i].created}</p>
+                        <p class="lead mb-0" style= "color: red;">${created} </p>
                       </div>
+                    <div class="image-style">
                       <img src="${json[i].media}"
-                        class="card-img-top" />
+                        class="card-img-top image-listing" />
+                    </div>
                       <div class="card-body">
                         <div class="d-flex justify-content-between">
                           <p class="small">${json[i].title}</p>
@@ -85,10 +99,17 @@ export async function getPosts() {
                         <div class="d-flex justify-content-between mb-3">
                           <h5 class="mb-0">${json[i].description}</h5
                         </div>
-                      </div>`
+                        <a href="specific.html?id=${json[i].id}"><button type="button" class="btn btn-primary">View Listing</button></a>
+                      </div>
+                    </div>
+                  </div>
+                      `
                     
       
       }
+
+       
+
   } catch (error){
     console.log(error);
   }
@@ -96,5 +117,6 @@ export async function getPosts() {
 
 
 }
+
 
 getPosts();
