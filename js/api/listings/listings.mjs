@@ -2,9 +2,13 @@ import { API_PATH_URL } from "../constants/url.mjs";
 
 
 const wrapper = document.querySelector("#wrapper");
-
-
 const listings = "/listings?_active=true&sort=created&sortOrder=desc&_seller=true";
+
+
+if (!localStorage.getItem("accessToken")) {
+  window.location.href = "signin.html";
+  throw new Error ("Please Log In!")
+}
 
 export async function getPosts() {
     const renderUrl =
@@ -53,9 +57,6 @@ export async function getPosts() {
                         <div class="d-flex justify-content-between">
                           <p class="small">${filteredFeed[i].title}</p>
                         </div>
-                        <div class="d-flex justify-content-between mb-3">
-                          <h5 class="mb-0">${filteredFeed[i].description}</h5
-                        </div>
                       </div>
                       </div>
                   </div>`
@@ -94,10 +95,6 @@ export async function getPosts() {
                       <div class="card-body">
                         <div class="d-flex justify-content-between">
                           <p class="small">${json[i].title}</p>
-                        </div>
-            
-                        <div class="d-flex justify-content-between mb-3">
-                          <h5 class="mb-0">${json[i].description}</h5
                         </div>
                         <a href="specific.html?id=${json[i].id}"><button type="button" class="btn btn-primary">View Listing</button></a>
                       </div>

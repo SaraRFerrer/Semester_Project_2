@@ -1,6 +1,6 @@
 import { API_PATH_URL } from "../constants/url.mjs";
 import { fetchToken } from "../constants/fetch.mjs";
-import { isLoggedIn } from "../profile/isLoggedIn.mjs";
+
 
 /**
  * Function to get sigle listing with ID
@@ -41,6 +41,10 @@ export async function singleListing () {
     if (createHTML) {
 
     }
+
+    
+        
+    
 }
 
 singleListing();
@@ -51,6 +55,16 @@ function createHTML (json) {
     if (json.media.length === 0) {
         json.media = 'https://png.pngitem.com/pimgs/s/287-2876527_uncle-mike-s-qd115-ns-circle-hd-png.png';
       }
+
+
+      
+      const highestBid = json.bids.sort((a, b) => b.amount - a.amount);
+      if (highestBid[0].amount === 0) {
+            highestBid = ("No excisting Bids")
+        } 
+        
+      
+
     
     listing.innerHTML += `
     <div class="container">
@@ -67,9 +81,8 @@ function createHTML (json) {
           <p class="mb-2">${created}</p>
           <p class="card-text">${json.description}</p>
           <hr class="my-4" />
-          <p class="lead"><strong>Existing bids:</strong></p>
-          <p class="lead">${json._count.bids}</p>
-          <p class="lead">${json.bids.amount}</p>
+          <p class="lead"><strong>Highest Bid:</strong></p>
+          <p class="lead">${highestBid[0].amount}</p>
        
         </div>
       </div>
@@ -78,3 +91,4 @@ function createHTML (json) {
   </div>`
 
 };
+
