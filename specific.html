@@ -51,8 +51,6 @@
         <li><a href="index.html" class="nav-link px-2 link-secondary">Home</a></li>
         <li><a href="listings.html" class="nav-link px-2 link-dark">Listings</a></li>
         <li><a href="profile.html" class="nav-link px-2 link-dark">Profile</a></li>
-        <li><a href="signin.html"><button type="button" class="btn btn-outline-primary me-2">Login</button></a></li>
-        <li><a href="register.html"><button type="button" class="btn btn-primary">Sign-up</button></a></li>
       </ul>
 
     <div class="navbtn col-md-3 text-end">
@@ -81,7 +79,7 @@
             <label for="bidAmount">Place bid here:</label>
             <input id="bidAmount" class="form-control" type="number" name="amount" placeholder="Bidding Amount..." >
             </div>
-              <button type="submit" id="signOutBtn" class="btn btn-outline-danger">Place Bid</button>
+              <button type="submit" id="signOutBtn" class="btn btn-primary">Place Bid</button>
             </form>
           </div>
         </div>
@@ -100,6 +98,7 @@
 <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script type="module" src="/js/api/listings/singleListing.mjs"></script>
 <script type="module" src="/js/api/handelers/bids.mjs"></script>
+<script type="module" src="/js/api/profile/isLoggedIn.mjs"></script>
 </body>
 <footer>
     <ul>

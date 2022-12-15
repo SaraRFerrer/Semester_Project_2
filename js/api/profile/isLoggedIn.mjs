@@ -1,3 +1,14 @@
 import { load } from "../constants/stored.mjs";
 
-export const isLoggedIn = () => Boolean(load("accessToken"));
+const accessProfile = document.querySelector(".profileBtn");
+
+function displayBtn () {
+
+if (!load("accessToken")) {
+    accessProfile.style.display = "none";
+  }
+
+}
+
+displayBtn();
+  

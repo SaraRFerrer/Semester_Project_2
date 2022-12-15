@@ -50,10 +50,14 @@
     <ul class="nav col-12 col-md-auto mb-2 tent-justify-concenter mb-md-0">
       <li><a href="index.html" class="nav-link px-2 link-secondary">Home</a></li>
       <li><a href="listings.html" class="nav-link px-2 link-dark">Listings</a></li>
-      <li><a href="profile.html" id="profileBtn" class="nav-link px-2 link-dark">Profile</a></li>
-      <li><a href="signin.html"><button type="button" class="btn btn-outline-primary me-2">Login</button></a></li>
-      <li><a href="register.html"><button type="button" class="btn btn-primary">Sign-up</button></a></li>
+      <li><a href="profile.html" class=" profileBtn nav-link px-2 link-dark">Profile</a></li>
+      
     </ul>
+
+    <div class="navbtn col-md-3 text-end">
+        <a href="signin.html"><button type="button" class="btn btn-outline-primary me-2">Login</button></a>
+        <a href="register.html"><button type="button" class="btn btn-primary">Sign-up</button></a>
+    </div>
 </nav>
 </header>
 <main>
@@ -65,7 +69,9 @@
     <div class="row index-container">
     </div>
   </div>
-  <a href="listings.html"><button type="button" class="btn btn-primary align-items-center justify-content-center">View all Listings</button></a>
+  <div class="text-center">
+    <a href="listings.html"><button type="button" class="btn btn-primary align-items-center justify-content-center">View all Listings</button></a>
+  </div>
 </section>
 
 
@@ -74,6 +80,7 @@
 </main>
 <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script type="module" src="/js/api/handelers/index.mjs"></script>
+<script type="module" src="/js/api/profile/isLoggedIn.mjs"></script>
 </body>
 <footer>
   <ul>

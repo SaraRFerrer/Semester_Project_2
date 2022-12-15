@@ -1,5 +1,9 @@
 import { remove } from "../constants/stored.mjs";
 
+/**
+ * Function to remove objects from LocalStorage
+ */
+
 function logout() {
     const LOGOUT = document.querySelector(".logout");
 

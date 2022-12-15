@@ -1,6 +1,10 @@
 import { API_PATH_URL } from "../constants/url.mjs";
 import { registrationSuccess } from "./regValidation.mjs";
 
+/**
+ * POST request to add a new user to the API
+ */
+
 const form = document.querySelector("form")
 const username = document.querySelector("#username");
 const email = document.querySelector("#emailAddress");

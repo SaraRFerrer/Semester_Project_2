@@ -28,7 +28,7 @@ export async function editAvListener () {
             saved("avatar", form.avatar.value);
 
             editAvatar(avatar)
-            //location.reload();
+            location.reload();
         })
     }
 }

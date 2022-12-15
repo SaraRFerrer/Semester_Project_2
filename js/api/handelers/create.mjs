@@ -1,8 +1,6 @@
 import { createListing } from "../listings/createListing.mjs";
 
-const endDay = document.querySelector("#end-date");
-const endMonth = document.querySelector("#end-month");
-const endYear = document.querySelector("#end-year");
+
 const form = document.querySelector(".createForm");
 
 

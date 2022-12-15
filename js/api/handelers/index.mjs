@@ -3,6 +3,12 @@ import { API_PATH_URL } from "../constants/url.mjs";
 const card = document.querySelector(".index-container")
 const listings = "/listings?limit=9";
 
+
+/**
+ * GET request to the API to get listings 
+ */
+
+
 async function carouselListings() {
     const renderUrl =
       `${API_PATH_URL}${listings}`;
@@ -26,7 +32,7 @@ async function carouselListings() {
           card.innerHTML += 
            `
                   <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
-                    <div class="card">
+                    <div class="card shadow-lg p-3 mb-5 bg-body rounded">
                       <div class="d-flex justify-content-between p-3">
                         <p class="lead mb-0" style= "color: red;">${created} </p>
                       </div>
