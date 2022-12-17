@@ -39,8 +39,8 @@ async function userProfile () {
   
 
   const userData = load("profile");
-  const { name, credits} = userData;
-  const avatar = load("avatar");
+  const { name, credits, avatar} = userData;
+  
 
 
 
