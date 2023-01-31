@@ -20,7 +20,7 @@ function handleSubmit(e) {
   const bid = e.target.amount.value;
   addBid(id, Number(bid));
 
-  location.reload();
+  //location.reload();
 }
 
 addBidListener();
