@@ -1,12 +1,11 @@
 import { addBid } from "../listings/bid.mjs";
 
+export function addBidListener() {
+  const form = document.querySelector("#bid-form");
 
-export function addBidListener (){
-    const form = document.querySelector("#bid-form");
-
-    if(form) {
-        form.addEventListener("submit", handleSubmit)
-        }
+  if (form) {
+    form.addEventListener("submit", handleSubmit);
+  }
 }
 
 function handleSubmit(e) {
@@ -20,7 +19,9 @@ function handleSubmit(e) {
   const bid = e.target.amount.value;
   addBid(id, Number(bid));
 
-  //location.reload();
+  setTimeout(() => {
+    location.reload();
+  }, 3000);
 }
 
 addBidListener();
